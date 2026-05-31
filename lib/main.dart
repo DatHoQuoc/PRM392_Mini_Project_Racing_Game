@@ -11,6 +11,7 @@ import 'views/login/login_screen.dart';
 import 'views/_tmp/screen2_placeholder.dart';
 import 'views/track_select/track_select_screen.dart';
 import 'views/race/race_screen.dart';
+import 'views/car_select/car_select_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,6 +48,8 @@ class MyApp extends StatelessWidget {
           // Swap to `const GameLoader()` (or the real Screen 2) when ready.
           LoginScreen.nextRoute: (_) => const Screen2Placeholder(),
           TrackSelectScreen.route: (_) => const TrackSelectScreen(),
+          CarSelectScreen.route: (_) => const CarSelectScreen(),
+
         },
       ),
     );

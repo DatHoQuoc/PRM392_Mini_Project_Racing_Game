@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class CarModel {
   final int    id;
   final String name;
+  final String description;
   final Color  color;
   final Color  accent;
   /// Relative top speed used by the race engine (0.0 – 1.0).
@@ -15,6 +16,7 @@ class CarModel {
   const CarModel({
     required this.id,
     required this.name,
+    this.description = '',
     required this.color,
     required this.accent,
     this.speed    = 1.0,
@@ -24,21 +26,23 @@ class CarModel {
   // ── JSON ──────────────────────────────────────────────────
 
   factory CarModel.fromJson(Map<String, dynamic> json) => CarModel(
-    id:        json['id']        as int,
-    name:      json['name']      as String,
-    color:     Color(int.parse((json['color'] as String).replaceFirst('#', '0xFF'))),
-    accent:    Color(int.parse((json['accent'] as String).replaceFirst('#', '0xFF'))),
-    speed:     (json['speed']    as num?)?.toDouble() ?? 1.0,
-    assetPath: json['assetPath'] as String? ?? '',
+    id:          json['id']          as int,
+    name:        json['name']        as String,
+    description: json['description'] as String? ?? '',
+    color:       Color(int.parse((json['color'] as String).replaceFirst('#', '0xFF'))),
+    accent:      Color(int.parse((json['accent'] as String).replaceFirst('#', '0xFF'))),
+    speed:       (json['speed']    as num?)?.toDouble() ?? 1.0,
+    assetPath:   json['assetPath'] as String? ?? '',
   );
 
   Map<String, dynamic> toJson() => {
-    'id':        id,
-    'name':      name,
-    'color':     '#${color.value.toRadixString(16).substring(2).toUpperCase()}',
-    'accent':    '#${accent.value.toRadixString(16).substring(2).toUpperCase()}',
-    'speed':     speed,
-    'assetPath': assetPath,
+    'id':          id,
+    'name':        name,
+    'description': description,
+    'color':       '#${color.value.toRadixString(16).substring(2).toUpperCase()}',
+    'accent':      '#${accent.value.toRadixString(16).substring(2).toUpperCase()}',
+    'speed':       speed,
+    'assetPath':   assetPath,
   };
 
   @override

@@ -1,26 +1,29 @@
 [
   {
     "id": 0,
-    "name": "Red Racer",
+    "name": "RB21",
     "color": "#E53935",
     "accent": "#FFCDD2",
     "speed": 0.88,
-    "assetPath": "assets/images/cars/car_0.png"
+    "assetPath": "assets/images/cars/car_0.jpg",
+    "description": ""
   },
   {
     "id": 1,
-    "name": "Blue Bolt",
+    "name": "W17",
     "color": "#1E88E5",
     "accent": "#BBDEFB",
     "speed": 0.90,
-    "assetPath": "assets/images/cars/car_1.png"
+    "assetPath": "assets/images/cars/car_1.png",
+    "description": ""
   },
   {
     "id": 2,
-    "name": "Green Ghost",
+    "name": "AMR26",
     "color": "#43A047",
     "accent": "#C8E6C9",
     "speed": 0.86,
-    "assetPath": "assets/images/cars/car_2.png"
+    "assetPath": "assets/images/cars/car_2.jpg",
+    "description": ""
   }
 ]
