@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "name": "Figure 8",
+    "tagline": "Infinity loop with center crossover",
+    "theme": "Technical / Urban",
+    "type": "figure8",
+    "previewAsset": "assets/images/tracks/figure8_preview.png",
+    "audioKey": "track_figure8"
+  },
+  {
+    "id": 1,
+    "name": "Oval",
+    "tagline": "Stadium track, biggest grandstand",
+    "theme": "Stadium / Professional",
+    "type": "oval",
+    "previewAsset": "assets/images/tracks/oval_preview.png",
+    "audioKey": "track_oval"
+  },
+  {
+    "id": 2,
+    "name": "Square",
+    "tagline": "Rounded rectangle with tire barriers",
+    "theme": "Classic / Retro",
+    "type": "square",
+    "previewAsset": "assets/images/tracks/square_preview.png",
+    "audioKey": "track_square"
+  },
+  {
+    "id": 3,
+    "name": "Grand Prix",
+    "tagline": "Technical F1 circuit: chicane, sweepers & hairpin",
+    "theme": "Formula / Pro",
+    "type": "f1",
+    "previewAsset": "assets/images/tracks/f1_preview.png",
+    "audioKey": "track_f1"
+  }
+]
