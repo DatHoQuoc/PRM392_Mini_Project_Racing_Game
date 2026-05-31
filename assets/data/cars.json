@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "Red Racer",
+    "color": "#E53935",
+    "accent": "#FFCDD2",
+    "speed": 0.88,
+    "assetPath": "assets/images/cars/car_0.png"
+  },
+  {
+    "id": 1,
+    "name": "Blue Bolt",
+    "color": "#1E88E5",
+    "accent": "#BBDEFB",
+    "speed": 0.90,
+    "assetPath": "assets/images/cars/car_1.png"
+  },
+  {
+    "id": 2,
+    "name": "Green Ghost",
+    "color": "#43A047",
+    "accent": "#C8E6C9",
+    "speed": 0.86,
+    "assetPath": "assets/images/cars/car_2.png"
+  }
+]
