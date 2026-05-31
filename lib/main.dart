@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'home_screen.dart'; // Import màn hình Home vừa tách
+import 'views/screen2/screen2_screen.dart'; 
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,9 +23,10 @@ class MiniRacingGameApp extends StatelessWidget {
       title: 'Mini Racing Game',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xFF6F001D),
+        primaryColor: const Color(0xFF6F001D), 
       ),
-      home: const GameHomeScreen(), // Gọi đến màn hình Home sạch sẽ
+      
+      home: const Screen2Screen(), 
     );
   }
 }
