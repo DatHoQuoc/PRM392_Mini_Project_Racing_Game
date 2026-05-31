@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 import 'data/repositories/game_repository.dart';
 import 'data/models/car_model.dart';
 import 'data/models/track_model.dart';
+import 'viewmodels/auth_viewmodel.dart';
+import 'viewmodels/track_viewmodel.dart';
+import 'views/login/login_screen.dart';
+import 'views/_tmp/screen2_placeholder.dart';
+import 'views/track_select/track_select_screen.dart';
 import 'views/race/race_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Game is designed for landscape (812×375) — lock it.
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
   runApp(const MyApp());
 }
 
@@ -14,25 +27,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Race!',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF000080)),
+    // App-root ViewModels (MVVM state management via provider).
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthViewModel()),
+        ChangeNotifierProvider(create: (_) => TrackViewModel()),
+      ],
+      child: MaterialApp(
+        title: 'Race!',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF000080)),
+        ),
+        // Login is the entry point; on success it routes to the game loader.
+        initialRoute: '/',
+        routes: {
+          '/': (_) => const LoginScreen(),
+          // ⚠️ TEMP: Screen 2 is owned by another member — using a placeholder.
+          // Swap to `const GameLoader()` (or the real Screen 2) when ready.
+          LoginScreen.nextRoute: (_) => const Screen2Placeholder(),
+          TrackSelectScreen.route: (_) => const TrackSelectScreen(),
+        },
       ),
-      home: const _GameLoader(),
     );
   }
 }
 
-class _GameLoader extends StatefulWidget {
-  const _GameLoader();
+class GameLoader extends StatefulWidget {
+  const GameLoader({super.key});
 
   @override
-  State<_GameLoader> createState() => _GameLoaderState();
+  State<GameLoader> createState() => _GameLoaderState();
 }
 
-class _GameLoaderState extends State<_GameLoader> {
+class _GameLoaderState extends State<GameLoader> {
   final _repo = GameRepository();
 
   late Future<(List<CarModel>, List<TrackModel>)> _future;

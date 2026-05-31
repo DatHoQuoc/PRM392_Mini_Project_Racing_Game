@@ -3,7 +3,21 @@ class AppStrings {
   AppStrings._();
 
   // ── General ───────────────────────────────────────────────
-  static const String appName = 'Race Game';
+  static const String appName    = 'Race Game';
+  static const String appVersion = 'v1.0.0';
+
+  // ── Login screen ──────────────────────────────────────────
+  static const String loginLogo         = 'TURBO RACE';
+  static const String loginTagline      = 'Place your bets. Start your engines.';
+  static const String loginTitle        = 'LOGIN';
+  static const String loginUsernameHint = 'Username';
+  static const String loginPasswordHint = 'Password';
+  static const String loginButton       = 'START RACING';
+
+  /// Demo credentials (hard-coded auth for the mini-project).
+  static const String demoUsername = 'user';
+  static const String demoPassword = '1234';
+  static const String demoHint     = 'user / 1234';
 
   // ── Track names ───────────────────────────────────────────
   static const String trackFigure8   = 'Figure 8';
