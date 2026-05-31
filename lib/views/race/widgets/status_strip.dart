@@ -46,7 +46,7 @@ class _StatusStripState extends State<StatusStrip>
       case RaceState.idle:
       case RaceState.ready:
         return Icon(Icons.volume_off_rounded,
-            size: 14, color: Colors.white.withOpacity(0.8));
+            size: 14, color: Colors.white.withValues(alpha: 0.8));
       case RaceState.countdown:
         return const Icon(Icons.notifications_active_rounded,
             size: 14, color: Color(0xFFFFFF00));

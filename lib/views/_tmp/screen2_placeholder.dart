@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
 import '../../data/models/track_option_model.dart';
 import '../track_select/track_select_screen.dart';
+import '../car_select/car_select_screen.dart';
 
 /// ⚠️ TEMPORARY PLACEHOLDER — NOT a real screen.
 ///
@@ -60,7 +61,30 @@ class _Screen2PlaceholderState extends State<Screen2Placeholder> {
   Widget build(BuildContext context) {
     final track = _selectedTrack;
     return Scaffold(
+     
+     //Play button is added here for testing navigation to car select screen, can be removed when screen 2 is implemented and linked to car select screen.
       backgroundColor: AppColors.navy,
+       floatingActionButton: FloatingActionButton.extended(
+    onPressed: () {
+      Navigator.of(context).pushNamed(CarSelectScreen.route);
+    },
+    backgroundColor: AppColors.primaryRed,
+    foregroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(30),
+      side: const BorderSide(color: AppColors.yellow, width: 2),
+    ),
+    icon: const Icon(Icons.play_arrow_rounded, size: 28),
+    label: const Text(
+      'PLAY',
+      style: TextStyle(
+        fontWeight: FontWeight.w900,
+        letterSpacing: 1.5,
+        fontSize: 15,
+      ),
+    ),
+  ),
+  floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
