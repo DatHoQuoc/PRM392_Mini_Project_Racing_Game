@@ -153,6 +153,8 @@ class _RaceScreenState extends State<RaceScreen>
         'wallet': widget.wallet,
         'betAmount': widget.betAmount,
         'selectedCarId': widget.selectedCarId,
+
+        'cars': widget.cars,
       },
     );
   }
