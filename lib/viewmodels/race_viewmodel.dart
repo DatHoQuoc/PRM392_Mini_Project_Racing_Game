@@ -80,11 +80,12 @@ class RaceViewModel extends ChangeNotifier {
 
     _countdownTimer = Timer.periodic(const Duration(seconds: 1), (t) {
       _countdown--;
-      if (_countdown <= 0) {
+      if (_countdown < 0) {
         t.cancel();
         _beginRacing();
+      } else {
+        notifyListeners();
       }
-      notifyListeners();
     });
   }
 

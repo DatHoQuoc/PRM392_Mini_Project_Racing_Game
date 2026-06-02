@@ -144,7 +144,7 @@ class AudioManager {
 
   String _trackAudio(TrackType track) {
     switch (track) {
-      case TrackType.oval:    return 'track_oval.mp3';
+      case TrackType.oval:    return 'track_circle.mp3';
       case TrackType.figure8: return 'track_figure8.mp3';
       case TrackType.square:  return 'track_square.mp3';
       case TrackType.f1:      return 'track_f1.mp3';
