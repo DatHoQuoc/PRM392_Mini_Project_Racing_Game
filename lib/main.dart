@@ -12,6 +12,7 @@ import 'views/_tmp/screen2_placeholder.dart';
 import 'views/track_select/track_select_screen.dart';
 import 'views/race/race_screen.dart';
 import 'views/car_select/car_select_screen.dart';
+import 'views/result_screen/result_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,6 +50,9 @@ class MyApp extends StatelessWidget {
           LoginScreen.nextRoute: (_) => const Screen2Placeholder(),
           TrackSelectScreen.route: (_) => const TrackSelectScreen(),
           CarSelectScreen.route: (_) => const CarSelectScreen(),
+
+          ResultScreen.route: (_) => const ResultScreen(),
+
         },
       ),
     );
@@ -102,8 +106,8 @@ class _GameLoaderState extends State<GameLoader> {
         final (cars, tracks) = snapshot.data!;
 
         return RaceScreen(
-          cars: cars,
-          track: tracks.last, // default to first track
+          cars:   cars,
+          track:  tracks.last,   // default to first track
           wallet: 100.00,
           betAmount: 0.0,
           selectedCarId: cars.first.id,
