@@ -101,6 +101,11 @@ class BettingColumn extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 4),
+          BetSizeButtons(
+            maxBet: maxBet,
+            selectedPresetPct: selectedPresetPct,
+            onSelect: onPresetSelected,
+          ),
           const Spacer(),
 
           SizedBox(
