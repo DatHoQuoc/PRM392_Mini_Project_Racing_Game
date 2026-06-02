@@ -74,13 +74,10 @@ class _GameLoaderState extends State<GameLoader> {
   @override
   void initState() {
     super.initState();
-    _future = Future.wait([
-      _repo.loadCars(),
-      _repo.loadTracks(),
-    ]).then((results) => (
-    results[0] as List<CarModel>,
-    results[1] as List<TrackModel>,
-    ));
+    _future = Future.wait([_repo.loadCars(), _repo.loadTracks()]).then(
+      (results) =>
+          (results[0] as List<CarModel>, results[1] as List<TrackModel>),
+    );
   }
 
   @override
@@ -92,16 +89,16 @@ class _GameLoaderState extends State<GameLoader> {
         if (snapshot.connectionState != ConnectionState.done) {
           return const Scaffold(
             backgroundColor: Color(0xFF000080),
-            body: Center(
-              child: CircularProgressIndicator(color: Colors.white),
-            ),
+            body: Center(child: CircularProgressIndicator(color: Colors.white)),
           );
         }
 
         // ── Error ────────────────────────────────────────────
         if (snapshot.hasError) {
           return Scaffold(
-            body: Center(child: Text('Failed to load data:\n${snapshot.error}')),
+            body: Center(
+              child: Text('Failed to load data:\n${snapshot.error}'),
+            ),
           );
         }
 
