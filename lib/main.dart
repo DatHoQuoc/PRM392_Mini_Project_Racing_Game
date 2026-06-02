@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'views/screen2/screen2_screen.dart'; 
 import 'package:provider/provider.dart';
-
 import 'data/repositories/game_repository.dart';
 import 'data/models/car_model.dart';
 import 'data/models/track_model.dart';
 import 'viewmodels/auth_viewmodel.dart';
 import 'viewmodels/track_viewmodel.dart';
 import 'views/login/login_screen.dart';
-import 'views/_tmp/screen2_placeholder.dart';
 import 'views/track_select/track_select_screen.dart';
 import 'views/race/race_screen.dart';
 import 'views/car_select/car_select_screen.dart';
@@ -21,11 +20,11 @@ void main() {
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]);
-  runApp(const MyApp());
+  runApp(const MiniRacingGameApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MiniRacingGameApp extends StatelessWidget {
+  const MiniRacingGameApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +44,15 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (_) => const LoginScreen(),
-          // ⚠️ TEMP: Screen 2 is owned by another member — using a placeholder.
-          // Swap to `const GameLoader()` (or the real Screen 2) when ready.
-          LoginScreen.nextRoute: (_) => const Screen2Placeholder(),
+          LoginScreen.nextRoute: (_) => const Screen2Screen(), 
           TrackSelectScreen.route: (_) => const TrackSelectScreen(),
           CarSelectScreen.route: (_) => const CarSelectScreen(),
-
           ResultScreen.route: (_) => const ResultScreen(),
-
         },
       ),
     );
   }
-}
+} 
 
 class GameLoader extends StatefulWidget {
   const GameLoader({super.key});
