@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../data/models/track_option_model.dart';
+import '../../data/models/track_model.dart';
 import '../track_select/track_select_screen.dart';
 import '../car_select/car_select_screen.dart';
 
@@ -66,7 +67,31 @@ class _Screen2PlaceholderState extends State<Screen2Placeholder> {
       backgroundColor: AppColors.navy,
        floatingActionButton: FloatingActionButton.extended(
     onPressed: () {
-      Navigator.of(context).pushNamed(CarSelectScreen.route);
+      final track = _selectedTrack;
+      if (track == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Please select a track first!')),
+        );
+        return;
+      }
+      
+      final trackModel = TrackModel(
+        id: track.id,
+        name: track.name,
+        type: track.type,
+        tagline: track.description,
+        theme: track.difficulty,
+        previewAsset: track.previewAsset,
+        audioKey: 'track_${track.type.name}',
+      );
+
+      Navigator.of(context).pushNamed(
+        CarSelectScreen.route,
+        arguments: {
+          'track': trackModel,
+          'wallet': 100.0,
+        },
+      );
     },
     backgroundColor: AppColors.primaryRed,
     foregroundColor: Colors.white,

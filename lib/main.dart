@@ -109,6 +109,8 @@ class _GameLoaderState extends State<GameLoader> {
           cars:   cars,
           track:  tracks.last,   // default to first track
           wallet: 100.00,
+          betAmount: 0.0,
+          selectedCarId: cars.first.id,
         );
       },
     );

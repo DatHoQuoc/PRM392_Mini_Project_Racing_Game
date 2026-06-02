@@ -20,10 +20,14 @@ class RaceScreenArgs {
   final List<CarModel> cars;
   final TrackModel track;
   final double wallet;
+  final double betAmount;
+  final int selectedCarId;
   const RaceScreenArgs({
     required this.cars,
     required this.track,
     required this.wallet,
+    required this.betAmount,
+    required this.selectedCarId,
   });
 }
 
@@ -42,12 +46,16 @@ class RaceScreen extends StatefulWidget {
   final List<CarModel> cars;
   final TrackModel track;
   final double wallet;
+  final double betAmount;
+  final int selectedCarId;
 
   const RaceScreen({
     super.key,
     required this.cars,
     required this.track,
     required this.wallet,
+    required this.betAmount,
+    required this.selectedCarId,
   });
 
   @override
@@ -143,6 +151,8 @@ class _RaceScreenState extends State<RaceScreen>
         'winner': _vm.winnerId ?? order.first.id,
         'order': order.map((e) => e.id).toList(),
         'wallet': widget.wallet,
+        'betAmount': widget.betAmount,
+        'selectedCarId': widget.selectedCarId,
       },
     );
   }
