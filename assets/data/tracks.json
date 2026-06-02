@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "name": "Figure 8",
+    "tagline": "Infinity loop with center crossover",
+    "theme": "Technical / Urban",
+    "type": "figure8",
+    "previewAsset": "assets/images/tracks/figure8_preview.png",
+    "audioKey": "track_figure8",
+    "difficulty": "HARD",
+    "description": "Cross-over loops, high speed",
+    "lengthM": 480
+  },
+  {
+    "id": 1,
+    "name": "Circle",
+    "tagline": "Stadium track, biggest grandstand",
+    "theme": "Stadium / Professional",
+    "type": "oval",
+    "previewAsset": "assets/images/tracks/oval_preview.png",
+    "audioKey": "track_oval",
+    "difficulty": "MEDIUM",
+    "description": "Smooth turns, consistent speed",
+    "lengthM": 360
+  },
+  {
+    "id": 2,
+    "name": "Square",
+    "tagline": "Rounded rectangle with tire barriers",
+    "theme": "Classic / Retro",
+    "type": "square",
+    "previewAsset": "assets/images/tracks/square_preview.png",
+    "audioKey": "track_square",
+    "difficulty": "EASY",
+    "description": "Sharp corners, test braking",
+    "lengthM": 320
+  },
+  {
+    "id": 3,
+    "name": "Grand Prix",
+    "tagline": "Technical F1 circuit: chicane, sweepers & hairpin",
+    "theme": "Formula / Pro",
+    "type": "f1",
+    "previewAsset": "assets/images/tracks/f1_preview.png",
+    "audioKey": "track_f1",
+    "difficulty": "EXPERT",
+    "description": "Chicane, sweepers & hairpin",
+    "lengthM": 620
+  }
+]
